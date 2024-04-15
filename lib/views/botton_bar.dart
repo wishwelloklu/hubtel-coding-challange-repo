@@ -50,8 +50,8 @@ class _CustomBottomBarState extends ConsumerState<CustomBottomBar>
     }
 
     Color unSelectedColor = theme.colorScheme.onSurface;
-    var iconMargin = EdgeInsets.only(bottom: Platform.isIOS ? 15 : 5);
-    final double tabBarHeight = Platform.isIOS ? 100 : 100;
+    var iconMargin = EdgeInsets.only(bottom: Platform.isIOS ? 10 : 5);
+    final double tabBarHeight = 100;
     return Container(
       color: Colors.white,
       child: TabBar(
@@ -81,6 +81,7 @@ class _CustomBottomBarState extends ConsumerState<CustomBottomBar>
                       shape: BoxShape.circle, color: Color(0xFFCCF3EF)),
                   child: SvgPicture.asset(
                     "assets/svgs/home.svg",
+                    height: 20,
                   ),
                 ),
                 const SizedBox(width: 10),

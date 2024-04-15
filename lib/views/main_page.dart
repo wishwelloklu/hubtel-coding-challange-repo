@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hubtel_test/controller/main_home_controller.dart';
 import 'package:hubtel_test/views/botton_bar.dart';
-import 'package:hubtel_test/views/homepage.dart';
+import 'package:hubtel_test/views/history.dart';
 
 class MainPage extends ConsumerStatefulWidget {
   const MainPage({super.key});
@@ -18,7 +18,7 @@ class _MainPageState extends ConsumerState<MainPage> {
     List pages = [
       Container(),
       Container(),
-      Homepage(),
+      History(),
       Container(),
     ];
     return Scaffold(
