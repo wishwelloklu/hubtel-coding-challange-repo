@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hubtel_test/components/text_field.dart';
 
@@ -142,7 +144,7 @@ class _HistoryState extends State<History> {
                   Icons.add_circle,
                   color: Colors.white,
                 ),
-                backgroundColor: const Color(0xfff01c7b1),
+                backgroundColor: const Color(0xff01c7b1),
               ),
             );
           }
@@ -184,24 +186,49 @@ class MainWidget extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Image.asset("assets/images/MTN Mobile Money.png"),
+                  const SizedBox(width: 8),
                   Expanded(
-                    child: Row(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Image.asset("assets/images/MTN Mobile Money.png"),
-                        const SizedBox(width: 8),
-                        const Column(
+                        Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              "Emmanuel Rockson",
-                              style: TextStyle(fontSize: 14),
+                            Expanded(
+                              child: Text(
+                                "Emmanuel Rockson Kwabena Uncle Ebo",
+                                style: TextStyle(fontSize: 14),
+                                maxLines: 2,
+                              ),
                             ),
-                            Text(
-                              "Kwabena Uncle Ebo",
-                              style: TextStyle(fontSize: 14),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 5),
+                              decoration: BoxDecoration(
+                                  color: const Color(0xFFDBF7E0),
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset("assets/svgs/check.svg"),
+                                  const SizedBox(width: 4),
+                                  const Text(
+                                    "Success",
+                                    style: TextStyle(
+                                      color: Color(0xFF70E083),
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
+                          ],
+                        ),
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
                             Text(
                               "024 123 4567",
                               style: TextStyle(
@@ -209,28 +236,12 @@ class MainWidget extends StatelessWidget {
                                 color: Color(0xFF9EADBA),
                               ),
                             ),
+                            Text(
+                              "GHS 500",
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w900),
+                            )
                           ],
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                    decoration: BoxDecoration(
-                        color: const Color(0xFFDBF7E0),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset("assets/svgs/check.svg"),
-                        const SizedBox(width: 4),
-                        const Text(
-                          "Success",
-                          style: TextStyle(
-                            color: Color(0xFF70E083),
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
                         ),
                       ],
                     ),
@@ -246,6 +257,7 @@ class MainWidget extends StatelessWidget {
                   Row(
                     children: [
                       SvgPicture.asset("assets/svgs/profile.svg"),
+                      const SizedBox(width: 8),
                       const Text(
                         "Personal",
                         style: TextStyle(
