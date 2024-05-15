@@ -8,6 +8,7 @@ class TransactionModel {
   final String reference;
   final String type;
   final String date;
+  final String logo;
   TransactionModel({
     required this.name,
     required this.status,
@@ -16,6 +17,7 @@ class TransactionModel {
     required this.reference,
     required this.type,
     required this.date,
+    required this.logo,
   });
 
   TransactionModel copyWith({
@@ -26,6 +28,7 @@ class TransactionModel {
     String? reference,
     String? type,
     String? date,
+    String? logo,
   }) {
     return TransactionModel(
       name: name ?? this.name,
@@ -35,12 +38,13 @@ class TransactionModel {
       reference: reference ?? this.reference,
       type: type ?? this.type,
       date: date ?? this.date,
+      logo: logo ?? this.logo,
     );
   }
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
-  
+
     result.addAll({'name': name});
     result.addAll({'status': status});
     result.addAll({'phone': phone});
@@ -48,7 +52,8 @@ class TransactionModel {
     result.addAll({'reference': reference});
     result.addAll({'type': type});
     result.addAll({'date': date});
-  
+    result.addAll({'logo': logo});
+
     return result;
   }
 
@@ -61,40 +66,44 @@ class TransactionModel {
       reference: map['reference'] ?? '',
       type: map['type'] ?? '',
       date: map['date'] ?? '',
+      logo: map['logo'] ?? '',
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory TransactionModel.fromJson(String source) => TransactionModel.fromMap(json.decode(source));
+  factory TransactionModel.fromJson(String source) =>
+      TransactionModel.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'TransactionModel(name: $name, status: $status, phone: $phone, amount: $amount, reference: $reference, type: $type, date: $date)';
+    return 'TransactionModel(name: $name, status: $status, phone: $phone, amount: $amount, reference: $reference, type: $type, date: $date, logo: $logo)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is TransactionModel &&
-      other.name == name &&
-      other.status == status &&
-      other.phone == phone &&
-      other.amount == amount &&
-      other.reference == reference &&
-      other.type == type &&
-      other.date == date;
+        other.name == name &&
+        other.status == status &&
+        other.phone == phone &&
+        other.amount == amount &&
+        other.reference == reference &&
+        other.type == type &&
+        other.date == date &&
+        other.logo == logo;
   }
 
   @override
   int get hashCode {
     return name.hashCode ^
-      status.hashCode ^
-      phone.hashCode ^
-      amount.hashCode ^
-      reference.hashCode ^
-      type.hashCode ^
-      date.hashCode;
+        status.hashCode ^
+        phone.hashCode ^
+        amount.hashCode ^
+        reference.hashCode ^
+        type.hashCode ^
+        date.hashCode ^
+        logo.hashCode;
   }
 }

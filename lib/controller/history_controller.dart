@@ -5,7 +5,7 @@ import 'dart:developer';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hubtel_test/externsions/strings_extersnion.dart';
-import 'package:hubtel_test/model/transaction.dart';
+import 'package:hubtel_test/model/history.dart';
 
 final transactionProvider = AsyncNotifierProvider.autoDispose<
     TransactionController,
